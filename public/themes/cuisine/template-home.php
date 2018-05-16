@@ -4,6 +4,6 @@
 get_header();
 ?>
 
-c'est la page d'accueil
+c'est la page d'accueil 
 
 <?php get_footer(); ?>

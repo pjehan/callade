@@ -197,3 +197,40 @@ function CuisineTheme_cpt() {
 	);
 
 	register_post_type( 'equipe', $args );
+
+  // Partie admin : Afficher l'onglet 'entreprise'
+
+    $labels = array(
+  		'name'               => _x( 'Entreprise', 'post type general name', 'entreprise-cuisine' ),
+  		'singular_name'      => _x( 'Entreprise', 'post type singular name', 'entreprise-cuisine' ),
+  		'menu_name'          => _x( 'Entreprises', 'admin menu', 'entreprise-cuisine' ),
+  		'name_admin_bar'     => _x( 'Entreprise', 'add new on admin bar', 'entreprise-cuisine' ),
+  		'add_new'            => _x( 'Ajouter une entreprise', 'book', 'entreprise-cuisine' ),
+  		'add_new_item'       => __( 'Ajouter une nouvelle entreprise', 'entreprise-cuisine' ),
+  		'new_item'           => __( 'Nouvelle entreprise', 'entreprise-cuisine' ),
+  		'edit_item'          => __( 'Modifier une entreprise', 'entreprise-cuisine' ),
+  		'view_item'          => __( 'Afficher une entreprise', 'entreprise-cuisine' ),
+  		'all_items'          => __( 'Toutes les entreprises', 'entreprise-cuisine' ),
+  		'search_items'       => __( 'Rechercher une entreprise', 'entreprise-cuisine' ),
+  		'parent_item_colon'  => __( 'Parent entreprise:', 'entreprise-cuisine' ),
+  		'not_found'          => __( 'Aucune entreprise n\'a été trouvées.', 'entreprise-cuisine' ),
+  		'not_found_in_trash' => __( 'Aucune entreprise n\'a été trouvées dans la corbeille.', 'entreprise-cuisine' )
+  	);
+
+  	$args = array(
+  		'labels'             => $labels,
+                  'description'        => __( 'Description.', 'entreprise-cuisine' ),
+  		'public'             => true,
+  		'publicly_queryable' => true,
+  		'show_ui'            => true,
+  		'show_in_menu'       => true,
+  		'query_var'          => true,
+  		'rewrite'            => array( 'slug' => 'entreprise' ),
+  		'capability_type'    => 'post',
+  		'has_archive'        => true,
+  		'hierarchical'       => false,
+  		'menu_position'      => 10,
+  		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+  	);
+
+  	register_post_type( 'entreprise', $args );
