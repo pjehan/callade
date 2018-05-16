@@ -5,6 +5,11 @@ declare(strict_types=1);
 // Register plugin helpers.
 require template_path('includes/plugins/plate.php');
 
+function register_my_menu() {
+  register_nav_menu('primary-menu',__( 'Menu Principal' ));
+}
+add_action( 'init', 'register_my_menu' );
+
 // Set theme defaults.
 add_action('after_setup_theme', function () {
     // Disable the admin toolbar.
@@ -50,9 +55,9 @@ add_filter('jpeg_quality', function () {
 
 // CODE VERIFIER PAR ERWAN
 
+
+
 // CODE DE JULIANE
-
-
 
 add_action ('init', 'CuisineTheme_cpt');
 function CuisineTheme_cpt() {
@@ -149,33 +154,5 @@ $labels = array(
 	);
 
 	register_taxonomy( 'type-repas', array( 'recette' ), $args );
-
-/* PRIX*/
-
-
-$labels = array(
-		'name'              => _x( 'Prix', 'taxonomy general name', 'cuisine' ),
-		'singular_name'     => _x( 'Prix', 'taxonomy singular name', 'cuisine' ),
-		'search_items'      => __( 'Recherche Prix', 'cuisine' ),
-		'all_items'         => __( 'Toutes les Prix', 'cuisine' ),
-		'parent_item'       => __( 'Parent Prix', 'cuisine' ),
-		'parent_item_colon' => __( 'Parent Prix:', 'cuisine' ),
-		'edit_item'         => __( 'Editer Prix', 'cuisine' ),
-		'update_item'       => __( 'Mettre à jour Prix', 'cuisine' ),
-		'add_new_item'      => __( 'Ajouter nouveau Prix', 'cuisine' ),
-		'new_item_name'     => __( 'Nouveau nom de l\'Prix', 'cuisine' ),
-		'menu_name'         => __( 'Prix', 'textdomain' ),
-
-	);
-
-	$args = array(
-		'hierarchical'      => false,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'Prix' ),
-	);
-  register_taxonomy( 'prix', array( 'recette' ), $args );
 
 }
