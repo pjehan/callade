@@ -9,8 +9,22 @@
 </head>
 <body <?php body_class(); ?>>
 
-    <header>
+    <header class='header-fixe'>
+      <div class='container'>
+        <?php
+          if ( function_exists( 'the_custom_logo' ) ) {
+            the_custom_logo();
+          } else {
+            wp_title();
+          }
+        ?>
         <nav role="navigation">
             <?php wp_nav_menu(['theme_location' => 'primary-menu']); ?>
         </nav>
+        <div class='burger'>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </header>
