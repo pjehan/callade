@@ -18,6 +18,10 @@ const theme = process.env.WP_THEME;
 mix.setResourceRoot('../');
 mix.setPublicPath(`public/themes/${theme}/assets`);
 
+mix.autoload({
+   jquery: ['$', 'window.jQuery']
+});
+
 mix.js('resources/assets/scripts/app.js', 'scripts');
 mix.sass('resources/assets/styles/app.scss', 'styles');
 

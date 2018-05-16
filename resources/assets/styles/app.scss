@@ -1,10 +1,8 @@
-/* WordPlate */
+@charset "UTF-8";
 
-
-body {
-  background: red;
-
-  nav {
-    background: blue;
-  }
-}
+@import "variables";
+@import "../../../vendor/twbs/bootstrap/scss/bootstrap.scss";
+@import "base";
+@import "header";
+@import "footer";
+@import "main";
