@@ -55,7 +55,6 @@ add_filter('jpeg_quality', function () {
 
 // CODE VERIFIÉ PAR ERWAN
 
-
 // Activer le custom logo
 
 add_theme_support( 'custom-logo' );
@@ -161,3 +160,40 @@ function CuisineTheme_cpt() {
 }
 
 // CODE DE JULIANE
+
+// Partie admin : Afficher l'onglet 'équipe'
+
+  $labels = array(
+		'name'               => _x( 'Equipe', 'post type general name', 'equipe-cuisine' ),
+		'singular_name'      => _x( 'Equipe', 'post type singular name', 'equipe-cuisine' ),
+		'menu_name'          => _x( 'Equipes', 'admin menu', 'equipe-cuisine' ),
+		'name_admin_bar'     => _x( 'Equipe', 'add new on admin bar', 'equipe-cuisine' ),
+		'add_new'            => _x( 'Ajouter un équipier', 'book', 'equipe-cuisine' ),
+		'add_new_item'       => __( 'Ajouter un nouvel équipier', 'equipe-cuisine' ),
+		'new_item'           => __( 'Nouvel équipier', 'equipe-cuisine' ),
+		'edit_item'          => __( 'Modifier l équipier', 'equipe-cuisine' ),
+		'view_item'          => __( 'Afficher l équipier', 'equipe-cuisine' ),
+		'all_items'          => __( 'Tous les équipiers', 'equipe-cuisine' ),
+		'search_items'       => __( 'Rechercher un équipier', 'equipe-cuisine' ),
+		'parent_item_colon'  => __( 'Parent equipe:', 'equipe-cuisine' ),
+		'not_found'          => __( 'Aucune equipe n\'a été trouvées.', 'equipe-cuisine' ),
+		'not_found_in_trash' => __( 'Aucune equipe n\'a été trouvées dans la corbeille.', 'equipe-cuisine' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+                'description'        => __( 'Description.', 'equipe-cuisine' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'equipe' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 10,
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+	);
+
+	register_post_type( 'equipe', $args );
