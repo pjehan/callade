@@ -14,17 +14,11 @@
         <?php
           if ( function_exists( 'the_custom_logo' ) ) {
             the_custom_logo();
-          } else {
-            wp_title();
           }
         ?>
-        <nav role="navigation">
+        <nav style='display:none' role='navigation'>
             <?php wp_nav_menu(['theme_location' => 'primary-menu']); ?>
         </nav>
-        <div class='burger'>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <div id='burger'><div></div></div>
       </div>
     </header>

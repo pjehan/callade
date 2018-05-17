@@ -4,6 +4,18 @@
 get_header();
 ?>
 
+<main id='cuisine-theme-menu'>
+<section id='header-page'>
+  <h1>Notre histoire</h1>
+</section>
+<section>
+  <div class='title-h3'>
+    <h3>Hello Dear</h3>
+    <strong>Lorem Ipsum</strong>
+  </div>
+</section>
+</main>
+
 <?php $query = new WP_Query(array('post_type' => 'recette')); ?>
 <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
   <a href="<?php the_permalink(); ?>">
