@@ -12,8 +12,10 @@
     <header class='header-fixe'>
       <div class='container'>
         <?php
-          if ( function_exists( 'the_custom_logo' ) ) {
+          if (function_exists('the_custom_logo') && has_custom_logo()) {
             the_custom_logo();
+          } else {
+            echo '<a href=""><span class="no-logo">' . get_bloginfo('name') . '</span></a>';
           }
         ?>
         <nav style='display:none' role='navigation'>

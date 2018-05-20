@@ -3,6 +3,12 @@
 
 get_header(); ?>
 
+<main id='cuisine-theme-team'>
+  <section id='header-page'>
+    <h1>Notre équipe</h1>
+  </section>
+</main>
+
 <?php
   $query = new WP_Query(array('post_type' => 'equipe'));
   if ($query->have_posts()): while ($query->have_posts()): $query->the_post();

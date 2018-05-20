@@ -21,10 +21,12 @@ $(function() {
       var burger = $('#burger');
       if (burger.hasClass('show') || burger.hasClass('hidden')) {
         burger.toggleClass('show').toggleClass('hidden')
-        $('header nav').toggle();
+        $('header').toggleClass('bg-if-menu-open');
+        $('header nav').fadeToggle(200);
       } else {
         burger.toggleClass('show');
-        $('header nav').show();
+        $('header').addClass('bg-if-menu-open');
+        $('header nav').fadeIn(200);
       }
     }
   });

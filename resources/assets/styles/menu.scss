@@ -1,0 +1,33 @@
+.list-recipe {
+  padding: 15px 0;
+
+  .menu-recipe {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px;
+    transition: background .3s ease;
+
+    &-content {
+      color: $secondary-color;
+      width: 100%;
+
+      p {
+        font-weight: bold;
+      }
+    }
+
+    &-price {
+      font-size: 2rem;
+      color: $primary-color;
+    }
+
+    &:hover {
+      background: rgba($secondary-color, 0.1);
+    }
+
+    &:focus, &:active {
+      background: rgba($secondary-color, 0.2);
+    }
+  }
+}

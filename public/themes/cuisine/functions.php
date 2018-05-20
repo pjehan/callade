@@ -234,3 +234,17 @@ function CuisineTheme_cpt() {
   	);
 
   	register_post_type( 'entreprise', $args );
+
+    // Custom function
+
+function get_the_term_list_without_link($post_id, $taxonomy_name) {
+  $terms = wp_get_post_terms($post_id, $taxonomy_name);
+  $count = count($terms);
+  if ( $count > 0 ) {
+    echo '<ul class="term-list">';
+    foreach ( $terms as $term ) {
+      echo '<li>' . $term->name . '</li>';
+    }
+    echo '</ul>';
+  }
+}

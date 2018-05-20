@@ -1,0 +1,18 @@
+footer {
+  background: $secondary-color;
+
+  .no-logo {
+    color: $white-color;
+  }
+
+  .enterprise-content {
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+      color: $primary-color;
+    }
+  }
+}

@@ -6,24 +6,75 @@
   background: red no-repeat center center/cover;
 
   h1 {
+    font-family: serif;
     font-size: 2rem;
+    color: $primary-color;
     text-transform: uppercase;
     padding: 20px;
+    margin: 15px;
     border: 2px solid $white-color;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
   }
 }
 
 
 .title-h3 {
   text-align: center;
+
   h3 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     color: $primary-color;
+    font-family: 'Great-day', serif;
+    margin-top: 30px;
   }
 
   strong {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.25rem;
     color: $secondary-color;
     position: relative;
     top: -10px;
   }
+}
+
+.title-h4 {
+  text-align: center;
+  background: red;
+  padding: 30px 15px 20px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+
+  h4 {
+    font-size: 2rem;
+    color: $primary-color;
+    font-family: 'Great-day', serif;
+  }
+
+  strong {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.5rem;
+    color: $white-color;
+    position: relative;
+    top: -10px;
+  }
+}
+
+ul.term-list {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    &::before {
+      content:', ';
+    }
+    &:first-of-type::before {
+      content:'';
+    }
+  }
+}
+
+.no-logo {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: $secondary-color;
 }
