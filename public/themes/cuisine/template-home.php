@@ -1,9 +1,10 @@
 <?php
 /* Template Name: Home page */
 
-get_header();
-?>
+get_header(); ?>
 
-c'est la page d'accueil 
+<main>
+  c'est la page d'accueil 
+</main>
 
 <?php get_footer(); ?>

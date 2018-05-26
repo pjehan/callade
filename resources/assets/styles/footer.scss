@@ -1,5 +1,16 @@
 footer {
   background: $secondary-color;
+  padding: 30px 0;
+
+  > div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    >div:first-of-type {
+      flex: 0 1 calc(100% / 3);
+    }
+  }
 
   .no-logo {
     color: $white-color;
@@ -9,10 +20,41 @@ footer {
     color: $primary-color;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+    flex: 0 1 calc(100% / 3 * 2);
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 100%;
+    }
 
     a {
       color: $primary-color;
+    }
+  }
+
+  @media (min-width:576px) {
+
+    > div {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+    }
+
+    .enterprise-content {
+      margin: 0;
+    }
+  }
+
+  @media (min-width:992px) {
+
+    .enterprise-content {
+      align-items: center;
+      flex-direction: row;
     }
   }
 }

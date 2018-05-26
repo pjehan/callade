@@ -4,9 +4,11 @@
 get_header(); ?>
 
 <main id='cuisine-theme-menu'>
+
   <section id='header-page'>
     <h1>Notre menu</h1>
   </section>
+
   <section class='container'>
     <div class='title-h3'>
       <h3>Hello Dear</h3>
@@ -14,6 +16,7 @@ get_header(); ?>
     </div>
     <p class='mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae urna vestibulum, feugiat nibh at, sagittis leo. Vestibulum id odio sodales mi fermentum ornare. Vivamus felis libero, pellentesque sed tristique molestie, rutrum sit amet justo. Nullam interdum ultrices feugiat. Nullam non elit non metus fringilla finibus. In eu blandit quam, sed iaculis nisl. Curabitur volutpat semper purus ultrices consectetur.</p>
   </section>
+
   <section>
     <div class='title-h4'>
       <h4>Start at 11:00 am</h4>
@@ -28,17 +31,19 @@ get_header(); ?>
         while ( $the_query->have_posts() ) {
           $the_query->the_post();?>
           <li>
-            <a class='menu-recipe' href="<?php the_permalink(); ?>">
-              <div class='menu-recipe-content'>
-                <p><?php echo the_title() ?></p>
-                <?php echo get_the_term_list_without_link(get_the_ID(),'ingredient'); ?>
+            <article>
+              <a class='menu-recipe' href="<?php the_permalink(); ?>">
+                <div class='menu-recipe-content'>
+                  <p><?php echo the_title() ?></p>
+                  <?php echo get_the_term_list_without_link(get_the_ID(),'ingredient'); ?>
 
-              </div>
-              <div class='menu-recipe-price'>
-                <?php the_field('prix'); ?>€
-              </div>
+                </div>
+                <div class='menu-recipe-price'>
+                  <?php the_field('prix'); ?>€
+                </div>
 
-            </a>
+              </a>
+            </article>
           </li>
 
           <?php }

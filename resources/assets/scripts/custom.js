@@ -33,8 +33,11 @@ $(function() {
 
   // Function show nav
   function show_nav() {
-    if ((window.innerWidth >= 992) && ($('header .menu').css('display', 'none'))) {
+    if (($(window).width() >= 992) && ($('header nav').css('display') == 'none')) {
       $('header nav').show();
+    } else if ((($(window).width() < 992) && ($('header nav').css('display') != 'none'))) {
+      $('header nav').hide();
+
     }
   }
 
@@ -44,6 +47,12 @@ $(function() {
     } else {
       $('.header-fixe').removeClass('bg-if-scrolled');
     }
+  });
+
+  show_nav();
+
+  $(window).resize(function() {
+    show_nav()
   });
 
 });

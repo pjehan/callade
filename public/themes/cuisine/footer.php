@@ -11,12 +11,25 @@
         ?>
       </div>
       <div class='enterprise-content'>
-        <a href="#">6 rue de la Chalotais 35000 RENNES</a>
-        <a href="tel:02 99 34 56 43">02 99 34 56 43</a>
-        <p>Du lundi au samedi</p>
-        <p>09:00 - 21:00</p>
-        <p>Dimanche</p>
-        <p>FERMÉ</p>
+        <?php
+          $query = new WP_Query(array('post_type' => 'entreprise'));
+          if ($query->have_posts()) {
+            while ($query->have_posts()){
+              $query->the_post();
+              the_post_thumbnail();?>
+              <div>
+                <a href="#"><?php the_field('adresse') ?></a>
+                <a href="<?php the_field('numero_de_telephone') ?>"><?php the_field('numero_de_telephone') ?></a>
+              </div>
+              <div>
+                <p>Du <?php the_field('premier_jour_ouvert_de_la_semaine') ?> au <?php the_field('dernier_jour_ouvert_de_la_semaine') ?></p>
+                <p><?php the_field('heure_douverture')?>h - <?php the_field('heure_de_fermeture') ?>h</p>
+                <p><?php the_field('jours_fermes_')?></p>
+                <p>Fermé</p>
+              </div>
+            <?php }
+          }
+        ?>
       </div>
     </div>
   </footer>

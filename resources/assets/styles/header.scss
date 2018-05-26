@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   transition: background .2s ease;
+  z-index: 1;
 
   h1 {
     font-size: 0;
@@ -57,7 +58,7 @@
         a {
           position: relative;
           text-decoration: none;
-          color: #fff;
+          color: $primary-color;
           padding: 10px 20px;
 
           &::after {
@@ -67,18 +68,18 @@
             left: 0;
             height: 2px;
             width: 0;
-            background: $white-color;
+            background: $primary-color;
             transition: width .3s ease;
           }
 
           &:hover::after {
             width: 100%;
-            background: rgba($white-color, .8);
+            background: rgba($primary-color, .8);
           }
 
           &:focus::after, &:active::after {
             width: 100%;
-            background: $white-color;
+            background: $primary-color;
           }
         }
       }
@@ -160,6 +161,32 @@
       top: 15px;
     }
   }
+
+  @media (min-width: 992px) {
+    #burger {
+      display: none;
+    }
+
+    nav {
+      flex: 0 1 100%;
+    }
+
+    .menu {
+      height: 100%;
+      position: initial;
+      background: transparent;
+
+      ul {
+        flex-direction: row;
+        flex: 1 1 100%;
+        justify-content: center;
+        li {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+
 }
 
 @keyframes menu_show_before {

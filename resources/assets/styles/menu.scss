@@ -1,5 +1,19 @@
 .list-recipe {
   padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  li {
+    flex: 0 1 500px;
+  }
+
+  @media (min-width: 768px  ) {
+    li {
+      flex: 0 1 50%;
+      max-width: 400px;
+    }
+  }
 
   .menu-recipe {
     display: flex;

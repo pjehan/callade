@@ -22,19 +22,19 @@ add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
 
     // Add HTML5 theme support.
-    add_theme_support('html5', [
+    add_theme_support('html5', array(
         'caption',
         'comment-form',
         'comment-list',
         'gallery',
         'search-form',
         'widgets',
-    ]);
+    ));
 
     // Register navigation menus.
-    register_nav_menus([
+    register_nav_menus(array( 
         'navigation' => __('Navigation', 'cuisine'),
-    ]);
+    ));
 });
 
 // Enqueue and register scripts the right way.
@@ -96,6 +96,7 @@ function CuisineTheme_cpt() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => 10,
+    'menu_icon'   => 'dashicons-clipboard',
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
 	);
 
@@ -193,6 +194,7 @@ function CuisineTheme_cpt() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => 10,
+    'menu_icon'   => 'dashicons-groups',
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
 	);
 
@@ -230,6 +232,7 @@ function CuisineTheme_cpt() {
   		'has_archive'        => true,
   		'hierarchical'       => false,
   		'menu_position'      => 10,
+      'menu_icon'   => 'dashicons-format-aside',
   		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
   	);
 
