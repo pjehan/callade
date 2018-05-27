@@ -31,25 +31,28 @@ $(function() {
     }
   });
 
-  // Function show nav
   function show_nav() {
     if (($(window).width() >= 992) && ($('header nav').css('display') == 'none')) {
       $('header nav').show();
     } else if ((($(window).width() < 992) && ($('header nav').css('display') != 'none'))) {
       $('header nav').hide();
-
     }
   }
 
-  $(window).scroll(function(){
+  function color_nav() {
     if ($(window).scrollTop() > 0) {
       $('.header-fixe').addClass('bg-if-scrolled');
     } else {
       $('.header-fixe').removeClass('bg-if-scrolled');
     }
-  });
+  }
 
+  color_nav();
   show_nav();
+
+  $(window).scroll(function(){
+    color_nav();
+  });
 
   $(window).resize(function() {
     show_nav()

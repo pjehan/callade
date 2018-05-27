@@ -4,7 +4,7 @@
 get_header(); ?>
 
 <main id='cuisine-theme-team'>
-  <section id='header-page'>
+  <section id='header-page' style='backgroud-image:URL DE IMAGE'>
     <h1>Notre équipe</h1>
   </section>
   <section class='container'>

@@ -5,21 +5,21 @@ get_header(); ?>
 
 <main id='cuisine-theme-menu'>
 
-  <section id='header-page'>
+  <section id='header-page' style='backgroud-image:URL DE IMAGE'>
     <h1>Notre menu</h1>
   </section>
 
   <section class='container'>
-    <div class='title-h3'>
-      <h3>Hello Dear</h3>
+    <div class='title-h2'>
+      <h2>Hello Dear</h2>
       <strong>Welcome to Callade</strong>
     </div>
     <p class='mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae urna vestibulum, feugiat nibh at, sagittis leo. Vestibulum id odio sodales mi fermentum ornare. Vivamus felis libero, pellentesque sed tristique molestie, rutrum sit amet justo. Nullam interdum ultrices feugiat. Nullam non elit non metus fringilla finibus. In eu blandit quam, sed iaculis nisl. Curabitur volutpat semper purus ultrices consectetur.</p>
   </section>
 
   <section>
-    <div class='title-h4'>
-      <h4>Start at 11:00 am</h4>
+    <div class='title-h3'>
+      <h3>Start at 11:00 am</h3>
       <strong>Breakfast Manu</strong>
     </div>
     <div class='container'>

@@ -32,7 +32,7 @@ add_action('after_setup_theme', function () {
     ));
 
     // Register navigation menus.
-    register_nav_menus(array( 
+    register_nav_menus(array(
         'navigation' => __('Navigation', 'cuisine'),
     ));
 });
@@ -85,7 +85,7 @@ function CuisineTheme_cpt() {
 
 	$args = array(
 		'labels'             => $labels,
-                'description'        => __( 'Description.', 'recette-cuisine' ),
+    'description'        => __( 'Description.', 'recette-cuisine' ),
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
@@ -160,85 +160,121 @@ function CuisineTheme_cpt() {
 
 }
 
-// CODE DE JULIANE
-
 // Partie admin : Afficher l'onglet 'équipe'
 
-  $labels = array(
-		'name'               => _x( 'Equipe', 'post type general name', 'equipe-cuisine' ),
-		'singular_name'      => _x( 'Equipe', 'post type singular name', 'equipe-cuisine' ),
-		'menu_name'          => _x( 'Equipes', 'admin menu', 'equipe-cuisine' ),
-		'name_admin_bar'     => _x( 'Equipe', 'add new on admin bar', 'equipe-cuisine' ),
-		'add_new'            => _x( 'Ajouter un équipier', 'book', 'equipe-cuisine' ),
-		'add_new_item'       => __( 'Ajouter un nouvel équipier', 'equipe-cuisine' ),
-		'new_item'           => __( 'Nouvel équipier', 'equipe-cuisine' ),
-		'edit_item'          => __( 'Modifier l équipier', 'equipe-cuisine' ),
-		'view_item'          => __( 'Afficher l équipier', 'equipe-cuisine' ),
-		'all_items'          => __( 'Tous les équipiers', 'equipe-cuisine' ),
-		'search_items'       => __( 'Rechercher un équipier', 'equipe-cuisine' ),
-		'parent_item_colon'  => __( 'Parent equipe:', 'equipe-cuisine' ),
-		'not_found'          => __( 'Aucune equipe n\'a été trouvées.', 'equipe-cuisine' ),
-		'not_found_in_trash' => __( 'Aucune equipe n\'a été trouvées dans la corbeille.', 'equipe-cuisine' )
-	);
+$labels = array(
+	'name'               => _x( 'Equipe', 'post type general name', 'equipe-cuisine' ),
+	'singular_name'      => _x( 'Equipe', 'post type singular name', 'equipe-cuisine' ),
+	'menu_name'          => _x( 'Equipes', 'admin menu', 'equipe-cuisine' ),
+	'name_admin_bar'     => _x( 'Equipe', 'add new on admin bar', 'equipe-cuisine' ),
+	'add_new'            => _x( 'Ajouter un équipier', 'book', 'equipe-cuisine' ),
+	'add_new_item'       => __( 'Ajouter un nouvel équipier', 'equipe-cuisine' ),
+	'new_item'           => __( 'Nouvel équipier', 'equipe-cuisine' ),
+	'edit_item'          => __( 'Modifier l équipier', 'equipe-cuisine' ),
+	'view_item'          => __( 'Afficher l équipier', 'equipe-cuisine' ),
+	'all_items'          => __( 'Tous les équipiers', 'equipe-cuisine' ),
+	'search_items'       => __( 'Rechercher un équipier', 'equipe-cuisine' ),
+	'parent_item_colon'  => __( 'Parent equipe:', 'equipe-cuisine' ),
+	'not_found'          => __( 'Aucune equipe n\'a été trouvées.', 'equipe-cuisine' ),
+	'not_found_in_trash' => __( 'Aucune equipe n\'a été trouvées dans la corbeille.', 'equipe-cuisine' )
+);
 
-	$args = array(
-		'labels'             => $labels,
-                'description'        => __( 'Description.', 'equipe-cuisine' ),
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'equipe' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => 10,
-    'menu_icon'   => 'dashicons-groups',
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
-	);
+$args = array(
+	'labels'             => $labels,
+              'description'        => __( 'Description.', 'equipe-cuisine' ),
+	'public'             => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => array( 'slug' => 'equipe' ),
+	'capability_type'    => 'post',
+	'has_archive'        => true,
+	'hierarchical'       => false,
+	'menu_position'      => 10,
+  'menu_icon'   => 'dashicons-groups',
+	'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+);
 
-	register_post_type( 'equipe', $args );
+register_post_type( 'equipe', $args );
 
-  // Partie admin : Afficher l'onglet 'entreprise'
+// Partie admin : Afficher l'onglet 'entreprise'
 
-    $labels = array(
-  		'name'               => _x( 'Entreprise', 'post type general name', 'entreprise-cuisine' ),
-  		'singular_name'      => _x( 'Entreprise', 'post type singular name', 'entreprise-cuisine' ),
-  		'menu_name'          => _x( 'Entreprises', 'admin menu', 'entreprise-cuisine' ),
-  		'name_admin_bar'     => _x( 'Entreprise', 'add new on admin bar', 'entreprise-cuisine' ),
-  		'add_new'            => _x( 'Ajouter une entreprise', 'book', 'entreprise-cuisine' ),
-  		'add_new_item'       => __( 'Ajouter une nouvelle entreprise', 'entreprise-cuisine' ),
-  		'new_item'           => __( 'Nouvelle entreprise', 'entreprise-cuisine' ),
-  		'edit_item'          => __( 'Modifier une entreprise', 'entreprise-cuisine' ),
-  		'view_item'          => __( 'Afficher une entreprise', 'entreprise-cuisine' ),
-  		'all_items'          => __( 'Toutes les entreprises', 'entreprise-cuisine' ),
-  		'search_items'       => __( 'Rechercher une entreprise', 'entreprise-cuisine' ),
-  		'parent_item_colon'  => __( 'Parent entreprise:', 'entreprise-cuisine' ),
-  		'not_found'          => __( 'Aucune entreprise n\'a été trouvées.', 'entreprise-cuisine' ),
-  		'not_found_in_trash' => __( 'Aucune entreprise n\'a été trouvées dans la corbeille.', 'entreprise-cuisine' )
-  	);
+$labels = array(
+	'name'               => _x( 'Entreprise', 'post type general name', 'entreprise-cuisine' ),
+	'singular_name'      => _x( 'Entreprise', 'post type singular name', 'entreprise-cuisine' ),
+	'menu_name'          => _x( 'Entreprises', 'admin menu', 'entreprise-cuisine' ),
+	'name_admin_bar'     => _x( 'Entreprise', 'add new on admin bar', 'entreprise-cuisine' ),
+	'add_new'            => _x( 'Ajouter une entreprise', 'book', 'entreprise-cuisine' ),
+	'add_new_item'       => __( 'Ajouter une nouvelle entreprise', 'entreprise-cuisine' ),
+	'new_item'           => __( 'Nouvelle entreprise', 'entreprise-cuisine' ),
+	'edit_item'          => __( 'Modifier une entreprise', 'entreprise-cuisine' ),
+	'view_item'          => __( 'Afficher une entreprise', 'entreprise-cuisine' ),
+	'all_items'          => __( 'Toutes les entreprises', 'entreprise-cuisine' ),
+	'search_items'       => __( 'Rechercher une entreprise', 'entreprise-cuisine' ),
+	'parent_item_colon'  => __( 'Parent entreprise:', 'entreprise-cuisine' ),
+	'not_found'          => __( 'Aucune entreprise n\'a été trouvées.', 'entreprise-cuisine' ),
+	'not_found_in_trash' => __( 'Aucune entreprise n\'a été trouvées dans la corbeille.', 'entreprise-cuisine' )
+);
 
-  	$args = array(
-  		'labels'             => $labels,
-                  'description'        => __( 'Description.', 'entreprise-cuisine' ),
-  		'public'             => true,
-  		'publicly_queryable' => true,
-  		'show_ui'            => true,
-  		'show_in_menu'       => true,
-  		'query_var'          => true,
-  		'rewrite'            => array( 'slug' => 'entreprise' ),
-  		'capability_type'    => 'post',
-  		'has_archive'        => true,
-  		'hierarchical'       => false,
-  		'menu_position'      => 10,
-      'menu_icon'   => 'dashicons-format-aside',
-  		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
-  	);
+$args = array(
+	'labels'             => $labels,
+              'description'        => __( 'Description.', 'entreprise-cuisine' ),
+	'public'             => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => array( 'slug' => 'entreprise' ),
+	'capability_type'    => 'post',
+	'has_archive'        => true,
+	'hierarchical'       => false,
+	'menu_position'      => 10,
+  'menu_icon'   => 'dashicons-format-aside',
+	'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+);
 
-  	register_post_type( 'entreprise', $args );
+register_post_type( 'entreprise', $args );
 
-    // Custom function
+// Partie admin : Afficher l'onglet 'Histoire'
+
+$labels = array(
+	'name'               => _x( 'Histoire', 'post type general name', 'histoire-cuisine' ),
+	'singular_name'      => _x( 'Histoire', 'post type singular name', 'histoire-cuisine' ),
+	'menu_name'          => _x( 'Histoire', 'admin menu', 'histoire-cuisine' ),
+	'name_admin_bar'     => _x( 'Histoire', 'add new on admin bar', 'histoire-cuisine' ),
+	'add_new'            => _x( 'Ajouter une date historique', 'book', 'histoire-cuisine' ),
+	'add_new_item'       => __( 'Ajouter une nouvelle date historique', 'histoire-cuisine' ),
+	'new_item'           => __( 'Nouvelle date historique', 'histoire-cuisine' ),
+	'edit_item'          => __( 'Modifier une date historique', 'histoire-cuisine' ),
+	'view_item'          => __( 'Afficher une date historique', 'histoire-cuisine' ),
+	'all_items'          => __( 'Toutes les dates historiques', 'histoire-cuisine' ),
+	'search_items'       => __( 'Rechercher une date historique', 'histoire-cuisine' ),
+	'parent_item_colon'  => __( 'Parent date historique:', 'histoire-cuisine' ),
+	'not_found'          => __( 'Aucune date historique n\'a été trouvées.', 'histoire-cuisine' ),
+	'not_found_in_trash' => __( 'Aucune date historique n\'a été trouvées dans la corbeille.', 'histoire-cuisine' )
+);
+
+$args = array(
+	'labels'             => $labels,
+  'description'        => __( 'Description.', 'histoire-cuisine' ),
+	'public'             => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => array( 'slug' => 'histoire' ),
+	'capability_type'    => 'post',
+	'has_archive'        => true,
+	'hierarchical'       => false,
+	'menu_position'      => 10,
+  'menu_icon'   => 'dashicons-format-aside',
+	'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+);
+
+register_post_type( 'histoire', $args );
+
+// Custom function
 
 function get_the_term_list_without_link($post_id, $taxonomy_name) {
   $terms = wp_get_post_terms($post_id, $taxonomy_name);

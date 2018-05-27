@@ -19,10 +19,10 @@
 }
 
 
-.title-h3 {
+.title-h2 {
   text-align: center;
 
-  h3 {
+  h2 {
     font-size: 2.5rem;
     color: $primary-color;
     font-family: 'Great-day', serif;
@@ -38,13 +38,13 @@
   }
 }
 
-.title-h4 {
+.title-h3 {
   text-align: center;
   background: red;
   padding: 30px 15px 20px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 
-  h4 {
+  h3 {
     font-size: 2rem;
     color: $primary-color;
     font-family: 'Great-day', serif;
@@ -94,5 +94,26 @@ ul.term-list {
 
   i {
     font-size: 10rem;
+  }
+}
+
+.list-secondary-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+
+  li {
+    margin: 20px;
+    flex: 0 1 300px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    img {
+      height: 100px;
+    }
+    h4 {
+      text-align: center;
+    }
   }
 }
