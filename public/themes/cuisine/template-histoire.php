@@ -11,10 +11,10 @@ get_header(); ?>
 
   <section class='container'>
     <div class='title-h2'>
-      <h2>Hello Dear</h2>
-      <strong>Welcome to Callade</strong>
+      <h2><?php the_field("titre") ?></h2>
+      <strong><?php the_field("sous_titre") ?></strong>
     </div>
-    <p class='mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae urna vestibulum, feugiat nibh at, sagittis leo. Vestibulum id odio sodales mi fermentum ornare. Vivamus felis libero, pellentesque sed tristique molestie, rutrum sit amet justo. Nullam interdum ultrices feugiat. Nullam non elit non metus fringilla finibus. In eu blandit quam, sed iaculis nisl. Curabitur volutpat semper purus ultrices consectetur.</p>
+    <p class='mb-4'><?php the_field("description") ?></p>
   </section>
 
   <section class='container'>
@@ -23,19 +23,19 @@ get_header(); ?>
   <section class='container'>
     <ul class='list-secondary-content'>
       <li>
-        <img src="" alt="">
-        <h4>Daily Fresh Menus</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <img src="<?php the_field("image_picto_1") ?>" alt="">
+        <h4><?php the_field("titre_picto_1") ?></h4>
+        <p><?php the_field("description_picto_1") ?></p>
       </li>
       <li>
-        <img src="" alt="">
-        <h4>Daily Fresh Menus</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <img src="<?php the_field("image_picto_2") ?>" alt="">
+        <h4><?php the_field("titre_picto_2") ?></h4>
+        <p><?php the_field("description_picto_2") ?></p>
       </li>
       <li>
-        <img src="" alt="">
-        <h4>Daily Fresh Menus</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <img src="<?php the_field("image_picto_3") ?>" alt="">
+        <h4><?php the_field("titre_picto_3") ?></h4>
+        <p><?php the_field("description_picto_3") ?></p>
       </li>
     </ul>
   </section>
