@@ -5,7 +5,7 @@ get_header(); ?>
 
 <main id='cuisine-theme-history'>
 
-  <section id='header-page' style='backgroud-image:URL DE IMAGE'>
+  <section id='header-page' style='background-image:url(<?php the_field("image_principale_page") ?>)'>
     <h1>Notre histoire</h1>
   </section>
 

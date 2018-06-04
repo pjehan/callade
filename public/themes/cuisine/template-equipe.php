@@ -4,7 +4,7 @@
 get_header(); ?>
 
 <main id='cuisine-theme-team'>
-  <section id='header-page' style='backgroud-image:URL DE IMAGE'>
+  <section id='header-page' style='background-image:url(<?php the_field("image_principale_page") ?>)'>
     <h1>Notre équipe</h1>
   </section>
   <section class='container'>
@@ -18,8 +18,8 @@ get_header(); ?>
         <li>
           <article class='teammate'>
             <?php
-            if (has_post_thumbnail()){
-              ?> <div class="img-cover"> <?php the_post_thumbnail(); ?> </div>
+            if (defined(the_field("image_equipier"))){
+              ?> <div class="img-cover"><img src="<?php the_field("image_equipier"); ?>"></div>
             <?php } else { ?>
               <div class='no-thumbnail'>
                 <i class="fas fa-user"></i>

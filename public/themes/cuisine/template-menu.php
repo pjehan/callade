@@ -5,22 +5,22 @@ get_header(); ?>
 
 <main id='cuisine-theme-menu'>
 
-  <section id='header-page' style='backgroud-image:URL DE IMAGE'>
+  <section id='header-page' style='background-image:url(<?php the_field("image_principale_page") ?>)'>
     <h1>Notre menu</h1>
   </section>
 
   <section class='container'>
     <div class='title-h2'>
-      <h2>Hello Dear</h2>
-      <strong>Welcome to Callade</strong>
+      <h2><?php the_field("titre") ?></h2>
+      <strong><?php the_field("sous_titre") ?></strong>
     </div>
-    <p class='mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae urna vestibulum, feugiat nibh at, sagittis leo. Vestibulum id odio sodales mi fermentum ornare. Vivamus felis libero, pellentesque sed tristique molestie, rutrum sit amet justo. Nullam interdum ultrices feugiat. Nullam non elit non metus fringilla finibus. In eu blandit quam, sed iaculis nisl. Curabitur volutpat semper purus ultrices consectetur.</p>
+    <p class='mb-4'><?php the_field("description") ?></p>
   </section>
 
   <section>
-    <div class='title-h3'>
-      <h3>Start at 11:00 am</h3>
-      <strong>Breakfast Manu</strong>
+    <div class='title-h3' style='background-image:url(<?php the_field("image_petit_dejeuner") ?>)'>
+      <h3><?php the_field("debut_petit_dejeuner") ?></h3>
+      <strong><?php the_field("petit_dejeuner") ?></strong>
     </div>
     <div class='container'>
       <?php $the_query = new WP_Query(array('post_type' => 'recette'));
