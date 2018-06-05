@@ -1,6 +1,9 @@
 <?php
 
-add_action ('init', 'History_cpt');
+
+if( function_exists('acf_add_local_field_group') ) {
+  add_action ('init', 'History_cpt');
+}
 add_action ('init', 'history_taxonomy');
 
 function History_cpt() {
@@ -41,7 +44,7 @@ function History_taxonomy() {
   	'hierarchical'       => false,
   	'menu_position'      => 10,
     'menu_icon'   => 'dashicons-format-aside',
-  	'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+  	'supports'           => array( 'title', 'author' )
   );
 
   register_post_type( 'histoire', $args );

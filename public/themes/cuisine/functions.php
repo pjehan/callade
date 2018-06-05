@@ -5,9 +5,9 @@ declare(strict_types=1);
 // Register plugin helpers.
 require template_path('includes/plugins/plate.php');
 
+require_once template_path('cpt/global.php');
 require_once template_path('cpt/recipe.php');
 require_once template_path('cpt/team.php');
-require_once template_path('cpt/temp.php');
 require_once template_path('cpt/enterprise.php');
 require_once template_path('cpt/history.php');
 

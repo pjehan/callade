@@ -1,53 +1,36 @@
 <?php
 
-add_action ('init', 'Recipe_cpt');
+if( function_exists('acf_add_local_field_group') ) {
+  add_action ('init', 'Recipe_cpt');
+}
 add_action ('init', 'Recipe_taxonomy');
 
 function Recipe_cpt() {
-
-  register_field_group(array (
+  // Custom post_type pour le modèle de la page "menu"
+  acf_add_local_field_group(array (
     'id' => 'acf_menu',
-    'title' => 'Menu',
+    'title' => 'Paramètres de la page : Menu',
     'fields' => array (
       array (
-        'key' => 'field_5b1537889604e',
-        'label' => 'Titre',
-        'name' => 'titre',
+        'key' => uniqid(),
+        'label' => 'Sous titre',
+        'name' => 'Sous titre',
         'type' => 'text',
-        'instructions' => 'Mettez le titre ',
-        'required' => 1,
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'formatting' => 'html',
-        'maxlength' => '',
+        'placeholder' => 'Indiquez le sous titre de la page',
       ),
       array (
-        'key' => 'field_5b1538269f189',
-        'label' => 'Sous titre',
+        'key' => uniqid(),
+        'label' => 'Texte important',
         'name' => 'sous_titre',
         'type' => 'text',
-        'instructions' => 'Mettez le sous titre ',
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'formatting' => 'html',
-        'maxlength' => '',
+        'placeholder' => 'Indiquez le sous sous titre de la page',
       ),
       array (
-        'key' => 'field_5b15383b9f18a',
+        'key' => uniqid(),
         'label' => 'Description',
         'name' => 'description',
         'type' => 'textarea',
-        'instructions' => 'Mettez la description ',
-        'required' => 1,
-        'default_value' => '',
-        'placeholder' => '',
-        'maxlength' => '',
-        'rows' => '',
-        'formatting' => 'br',
+        'placeholder' => 'Indiquez une description à la page',
       ),
     ),
     'location' => array (
@@ -59,33 +42,29 @@ function Recipe_cpt() {
         ),
       ),
     ),
-    'options' => array (
-      'position' => 'normal',
-      'layout' => 'no_box',
-      'hide_on_screen' => array (
-      ),
-    ),
-    'menu_order' => 0,
   ));
 
-  register_field_group(array (
-    'id' => 'acf_prix',
-    'title' => 'Prix',
+  // Custom post_type pour la taxonomy "recette"
+  acf_add_local_field_group(array (
+    'id' => 'acf_recette',
+    'title' => 'Informations sur le plat',
     'fields' => array (
       array (
-        'key' => 'field_5afc32c928212',
+        'key' => uniqid(),
+        'label' => 'Nom du plat',
+        'name' => 'nom plat',
+        'type' => 'text',
+        'placeholder' => 'Indiquez le nom du plat',
+        'required' => 1,
+      ),
+      array (
+        'key' => uniqid(),
         'label' => 'Prix',
         'name' => 'prix',
         'type' => 'number',
-        'instructions' => 'Indiquer le prix du plat',
-        'required' => 1,
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
+        'placeholder' => 'Indiquez le prix du plat en €, ex : 12,54€',
         'append' => '€',
-        'min' => 0,
-        'max' => '',
-        'step' => '',
+        'required' => 1,
       ),
     ),
     'location' => array (
@@ -94,22 +73,11 @@ function Recipe_cpt() {
           'param' => 'post_type',
           'operator' => '==',
           'value' => 'recette',
-          'order_no' => 0,
-          'group_no' => 0,
         ),
       ),
     ),
-    'options' => array (
-      'position' => 'normal',
-      'layout' => 'no_box',
-      'hide_on_screen' => array (
-      ),
-    ),
-    'menu_order' => 0,
   ));
-
 }
-
 
 function Recipe_taxonomy() {
 
@@ -144,7 +112,7 @@ function Recipe_taxonomy() {
 		'hierarchical'       => false,
 		'menu_position'      => 10,
     'menu_icon'   => 'dashicons-clipboard',
-		'supports'           => array( 'title', 'thumbnail', 'excerpt' )
+    'supports'           => array( 'title', 'author' )
 	);
 
 	register_post_type( 'recette', $args );

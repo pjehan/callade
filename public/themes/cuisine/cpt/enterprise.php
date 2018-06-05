@@ -1,107 +1,28 @@
 <?php
 
-add_action ('init', 'Enterprise_cpt');
+if( function_exists('acf_add_local_field_group') ) {
+  add_action ('init', 'Enterprise_cpt');
+}
 add_action ('init', 'Enterprise_taxonomy');
 
 function Enterprise_cpt() {
-
-  register_field_group(array (
+  acf_add_local_field_group(array (
 		'id' => 'acf_entreprise',
-		'title' => 'Entreprise',
+		'title' => "Informations de l'entreprise (elles seront affichées en bas du site)",
 		'fields' => array (
 			array (
-				'key' => 'field_5afc433a17f48',
+        'key' => uniqid(),
 				'label' => 'Adresse',
 				'name' => 'adresse',
 				'type' => 'text',
-				'instructions' => 'Entrer l\'adresse de l\'entreprise',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+				'placeholder' => "Indiquez l'adresse de l'entreprise",
 			),
 			array (
-				'key' => 'field_5afc434e17f49',
+        'key' => uniqid(),
 				'label' => 'Numéro de téléphone',
 				'name' => 'numero_de_telephone',
 				'type' => 'number',
-				'instructions' => 'Entrer le numéro de l\'entreprise',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'min' => '',
-				'max' => '',
-				'step' => '',
-			),
-			array (
-				'key' => 'field_5afc436417f4a',
-				'label' => 'Premier jour ouvert de la semaine ',
-				'name' => 'premier_jour_ouvert_de_la_semaine',
-				'type' => 'text',
-				'instructions' => 'Entrer le premier jour ouvert de la semaine ',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_5afc438617f4b',
-				'label' => 'dernier jour ouvert de la semaine',
-				'name' => 'dernier_jour_ouvert_de_la_semaine_',
-				'type' => 'text',
-				'instructions' => 'Entrer le premier jour ouvert de la semaine ',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_5afc439917f4c',
-				'label' => 'heure d\'ouverture',
-				'name' => 'heure_douverture',
-				'type' => 'number',
-				'instructions' => 'Entrer l\'heure d\'ouverture ',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'min' => '',
-				'max' => '',
-				'step' => '',
-			),
-			array (
-				'key' => 'field_5afc43bd17f4d',
-				'label' => 'heure de fermeture',
-				'name' => 'heure_de_fermeture',
-				'type' => 'number',
-				'instructions' => 'Entrer l\'heure de fermeture',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'min' => '',
-				'max' => '',
-				'step' => '',
-			),
-			array (
-				'key' => 'field_5afc43eb17f50',
-				'label' => 'Jours fermés ',
-				'name' => 'jours_fermes_',
-				'type' => 'text',
-				'instructions' => 'Entrer les jours fermés',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+				'placeholder' => "Indiquez le numéro de l'entreprise",
 			),
 		),
 		'location' => array (
@@ -110,20 +31,61 @@ function Enterprise_cpt() {
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'entreprise',
-					'order_no' => 0,
-					'group_no' => 0,
 				),
 			),
 		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
 	));
 
+  acf_add_local_field_group(array (
+		'id' => 'acf_entreprise-2',
+		'title' => "Ouvertures de l'entreprise (elles seront affichées en bas du site)",
+		'fields' => array (
+			array (
+        'key' => uniqid(),
+				'label' => 'Premier jour ouvert de la semaine ',
+				'name' => 'premier_jour_ouvert_de_la_semaine',
+				'type' => 'text',
+				'placeholder' => 'Indiquez le premier jour ouvert de la semaine ',
+			),
+			array (
+        'key' => uniqid(),
+				'label' => 'dernier jour ouvert de la semaine',
+				'name' => 'dernier_jour_ouvert_de_la_semaine_',
+				'type' => 'text',
+				'placeholder' => 'Indiquez le premier jour ouvert de la semaine ',
+			),
+			array (
+        'key' => uniqid(),
+				'label' => 'heure d\'ouverture',
+				'name' => 'heure_douverture',
+				'type' => 'number',
+				'placeholder' => "Indiquez l'heure d'ouverture",
+			),
+			array (
+        'key' => uniqid(),
+				'label' => 'heure de fermeture',
+				'name' => 'heure_de_fermeture',
+				'type' => 'number',
+        'placeholder' => "Indiquez l'heure de fermenture",
+			),
+			array (
+        'key' => uniqid(),
+				'label' => 'Jours fermés ',
+				'name' => 'jours_fermes',
+				'type' => 'text',
+				'placeholder' => 'Indiquez les jours fermés',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'entreprise',
+				),
+			),
+		),
+	));
 }
 
 function Enterprise_taxonomy() {
@@ -158,7 +120,7 @@ function Enterprise_taxonomy() {
   	'hierarchical'       => false,
   	'menu_position'      => 10,
     'menu_icon'   => 'dashicons-format-aside',
-  	'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+  	'supports'           => array( 'title' )
   );
 
   register_post_type( 'entreprise', $args );

@@ -38,7 +38,7 @@ get_header(); ?>
 
     } else { ?>
 
-      <div class='container d-flex flex-wrap justify-content-center'>
+      <div class='container d-flex flex-wrap justify-content-center align-items-center'>
         <span class='m-2'>Il n'y a aucun utilisateur dans l'équipe pour le moment</span>
         <?php if (user_can( wp_get_current_user(), 'administrator' )) {?>
           <a href='<?php echo admin_url('post-new.php?post_type=equipe'); ?>' class='btn btn-dark m-2'><i class="fas fa-pencil-alt mr-2"></i>Ajouter un coéquipier</a>

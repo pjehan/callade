@@ -1,62 +1,46 @@
 <?php
 
-add_action ('init', 'Team_cpt');
+if( function_exists('acf_add_local_field_group') ) {
+  add_action ('init', 'Team_cpt');
+}
 add_action ('init', 'Team_taxonomy');
 
 function Team_cpt() {
 
-  register_field_group(array (
+  acf_add_local_field_group(array (
 		'id' => 'acf_equipier',
-		'title' => 'Equipier',
+		'title' => "Informations de l'équipier",
 		'fields' => array (
 			array (
-				'key' => 'field_5afc3c0f223f0',
+				'key' => uniqid(),
 				'label' => 'Nom',
 				'name' => 'nom',
 				'type' => 'text',
-				'instructions' => 'Entrer le nom de l\'équipier',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+				'placeholder' => 'Indiquez le nom de l\'équipier',
+        'required' => 1,
 			),
 			array (
-				'key' => 'field_5afc3cad8fba7',
+				'key' => uniqid(),
 				'label' => 'Prénom',
 				'name' => 'prenom',
 				'type' => 'text',
-				'instructions' => 'Entrer le prénom de l\'équipier',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+				'placeholder' => 'Indiquez le prénom de l\'équipier',
+        'required' => 1,
 			),
 			array (
-				'key' => 'field_5afc3c3b223f1',
+				'key' => uniqid(),
 				'label' => 'Poste',
 				'name' => 'poste',
 				'type' => 'text',
-				'instructions' => 'Entrer le poste de l\'équipier',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+				'placeholder' => 'Indiquez le poste de l\'équipier'
 			),
       array (
-				'key' => 'field_5b1532eafdeaf',
-				'label' => 'image equipier',
+				'key' => uniqid(),
+				'label' => 'Photo de profil',
 				'name' => 'image_equipier',
 				'type' => 'image',
-				'instructions' => 'Mettez la photo de l\'équipier',
+				'instructions' => "Un pictogramme s'affichera si aucune image n'a été insérée.",
 				'save_format' => 'url',
-				'preview_size' => 'large',
-				'library' => 'all',
 			),
 		),
 		'location' => array (
@@ -65,20 +49,10 @@ function Team_cpt() {
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'equipe',
-					'order_no' => 0,
-					'group_no' => 0,
 				),
 			),
 		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
 	));
-
 }
 
 function Team_taxonomy() {
@@ -102,7 +76,7 @@ function Team_taxonomy() {
 
   $args = array(
     'labels'             => $labels,
-                'description'        => __( 'Description.', 'equipe-cuisine' ),
+    'description'        => __( 'Description.', 'equipe-cuisine' ),
     'public'             => true,
     'publicly_queryable' => true,
     'show_ui'            => true,
@@ -114,7 +88,7 @@ function Team_taxonomy() {
     'hierarchical'       => false,
     'menu_position'      => 10,
     'menu_icon'   => 'dashicons-groups',
-    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+    'supports'           => array( 'title', 'author' )
   );
 
   register_post_type( 'equipe', $args );
