@@ -6,6 +6,32 @@ if( function_exists('acf_add_local_field_group') ) {
 
 function Global_cpt() {
   acf_add_local_field_group(array (
+		'id' => 'acf_seo_page',
+		'title' => 'Paramètres SEO',
+		'fields' => array (
+      array (
+        'key' => 'acf_seo_page-description',
+        'label' => 'Description de la page',
+        'name' => 'meta_description',
+        'type' => 'text',
+        'maxlength' => 170,
+        'instructions' => "La description de la page s'affiche dans les résultats de recherche de Google. Ce champs est important pour améliorer son référencement.",
+        'placeholder' => 'Indiquez la description de la page pour le SEO',
+      ),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+				),
+			),
+		),
+    'menu_order' => 100,
+	));
+
+  acf_add_local_field_group(array (
 		'id' => 'acf_image-principale-page-2',
 		'title' => 'Paramètres généraux de la page',
 		'fields' => array (

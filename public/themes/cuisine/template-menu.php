@@ -11,10 +11,10 @@ get_header(); ?>
 
   <section class='container'>
     <div class='title-h2'>
-      <h2>Hello Dear</h2>
-      <strong>Welcome to Callade</strong>
+      <h2><?php the_field('titre') ?></h2>
+      <strong><?php the_field('sous_titre') ?></strong>
     </div>
-    <p class='mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae urna vestibulum, feugiat nibh at, sagittis leo. Vestibulum id odio sodales mi fermentum ornare. Vivamus felis libero, pellentesque sed tristique molestie, rutrum sit amet justo. Nullam interdum ultrices feugiat. Nullam non elit non metus fringilla finibus. In eu blandit quam, sed iaculis nisl. Curabitur volutpat semper purus ultrices consectetur.</p>
+    <p class='mb-4'><?php the_field('description') ?></p>
   </section>
 
   <section>
