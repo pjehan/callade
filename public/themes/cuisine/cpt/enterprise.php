@@ -11,14 +11,14 @@ function Enterprise_cpt() {
 		'title' => "Informations de l'entreprise (elles seront affichées en bas du site)",
 		'fields' => array (
 			array (
-        'key' => uniqid(),
+        'key' => 'adresse-entreprise',
 				'label' => 'Adresse',
 				'name' => 'adresse',
 				'type' => 'text',
 				'placeholder' => "Indiquez l'adresse de l'entreprise",
 			),
 			array (
-        'key' => uniqid(),
+        'key' => 'tel-entreprise',
 				'label' => 'Numéro de téléphone',
 				'name' => 'numero_de_telephone',
 				'type' => 'number',
@@ -41,35 +41,35 @@ function Enterprise_cpt() {
 		'title' => "Ouvertures de l'entreprise (elles seront affichées en bas du site)",
 		'fields' => array (
 			array (
-        'key' => uniqid(),
+        'key' => 'premier-jour-entreprise',
 				'label' => 'Premier jour ouvert de la semaine ',
 				'name' => 'premier_jour_ouvert_de_la_semaine',
 				'type' => 'text',
 				'placeholder' => 'Indiquez le premier jour ouvert de la semaine ',
 			),
 			array (
-        'key' => uniqid(),
+        'key' => 'dernier-jour-entreprise',
 				'label' => 'dernier jour ouvert de la semaine',
 				'name' => 'dernier_jour_ouvert_de_la_semaine_',
 				'type' => 'text',
 				'placeholder' => 'Indiquez le premier jour ouvert de la semaine ',
 			),
 			array (
-        'key' => uniqid(),
+        'key' => 'ouverture-entreprise',
 				'label' => 'heure d\'ouverture',
 				'name' => 'heure_douverture',
 				'type' => 'number',
 				'placeholder' => "Indiquez l'heure d'ouverture",
 			),
 			array (
-        'key' => uniqid(),
+        'key' => 'fermeture-entreprise',
 				'label' => 'heure de fermeture',
 				'name' => 'heure_de_fermeture',
 				'type' => 'number',
         'placeholder' => "Indiquez l'heure de fermenture",
 			),
 			array (
-        'key' => uniqid(),
+        'key' => 'jour-ferme-entreprise',
 				'label' => 'Jours fermés ',
 				'name' => 'jours_fermes',
 				'type' => 'text',

@@ -12,21 +12,21 @@ function Recipe_cpt() {
     'title' => 'Paramètres de la page : Menu',
     'fields' => array (
       array (
-        'key' => uniqid(),
+        'key' => 'titre',
         'label' => 'Sous titre',
         'name' => 'Sous titre',
         'type' => 'text',
         'placeholder' => 'Indiquez le sous titre de la page',
       ),
       array (
-        'key' => uniqid(),
+        'key' => 'sous-titre',
         'label' => 'Texte important',
         'name' => 'sous_titre',
         'type' => 'text',
         'placeholder' => 'Indiquez le sous sous titre de la page',
       ),
       array (
-        'key' => uniqid(),
+        'key' => 'description',
         'label' => 'Description',
         'name' => 'description',
         'type' => 'textarea',
@@ -50,7 +50,7 @@ function Recipe_cpt() {
     'title' => 'Informations sur le plat',
     'fields' => array (
       array (
-        'key' => uniqid(),
+        'key' => 'nom-recette',
         'label' => 'Nom du plat',
         'name' => 'nom plat',
         'type' => 'text',
@@ -58,7 +58,7 @@ function Recipe_cpt() {
         'required' => 1,
       ),
       array (
-        'key' => uniqid(),
+        'key' => 'prix-recette',
         'label' => 'Prix',
         'name' => 'prix',
         'type' => 'number',

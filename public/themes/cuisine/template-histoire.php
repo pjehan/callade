@@ -22,21 +22,11 @@ get_header(); ?>
   </section>
   <section class='container'>
     <ul class='list-secondary-content'>
+      <?php while ( have_rows('champs_complementaires') ) : the_row(); ?>
       <li>
-        <img src="<?php the_field("image_picto_1") ?>" alt="">
-        <h4><?php the_field("titre_picto_1") ?></h4>
-        <p><?php the_field("description_picto_1") ?></p>
+        <div><?php the_sub_field("titre") ?></div>
       </li>
-      <li>
-        <img src="<?php the_field("image_picto_2") ?>" alt="">
-        <h4><?php the_field("titre_picto_2") ?></h4>
-        <p><?php the_field("description_picto_2") ?></p>
-      </li>
-      <li>
-        <img src="<?php the_field("image_picto_3") ?>" alt="">
-        <h4><?php the_field("titre_picto_3") ?></h4>
-        <p><?php the_field("description_picto_3") ?></p>
-      </li>
+    <?php endwhile; ?>
     </ul>
   </section>
 

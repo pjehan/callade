@@ -12,7 +12,7 @@ function Team_cpt() {
 		'title' => "Informations de l'équipier",
 		'fields' => array (
 			array (
-				'key' => uniqid(),
+				'key' => 'nom-equipier',
 				'label' => 'Nom',
 				'name' => 'nom',
 				'type' => 'text',
@@ -20,7 +20,7 @@ function Team_cpt() {
         'required' => 1,
 			),
 			array (
-				'key' => uniqid(),
+				'key' => 'prenom-equipier',
 				'label' => 'Prénom',
 				'name' => 'prenom',
 				'type' => 'text',
@@ -28,14 +28,14 @@ function Team_cpt() {
         'required' => 1,
 			),
 			array (
-				'key' => uniqid(),
+				'key' => 'poste-equipier',
 				'label' => 'Poste',
 				'name' => 'poste',
 				'type' => 'text',
 				'placeholder' => 'Indiquez le poste de l\'équipier'
 			),
       array (
-				'key' => uniqid(),
+				'key' => 'photo-equipier',
 				'label' => 'Photo de profil',
 				'name' => 'image_equipier',
 				'type' => 'image',
