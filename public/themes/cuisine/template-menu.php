@@ -18,7 +18,7 @@ get_header(); ?>
   </section>
 
   <section>
-    <div class='title-h3'>
+    <div class='title-h3' style='background-image:url("<?php the_field("image-menu") ?>")'>
       <h3>Start at 11:00 am</h3>
       <strong>Breakfast Manu</strong>
     </div>
@@ -61,6 +61,23 @@ get_header(); ?>
       <?php } ?>
     </div>
   </section>
+
+  <?php if (get_field('activer_le_contenu_complementaire') && get_field('image_contenu_complementaire')){ ?>
+    <section class='more-content-container'>
+      <?php if (get_field('image_contenu_complementaire')): ?>
+        <div class='title-h3' style='background-image:url("<?php the_field("image_contenu_complementaire") ?>")'></div>
+      <?php endif; ?>
+      <ul>
+        <?php while(the_repeater_field('champs_complementaires')): ?>
+          <li>
+            <img src='<?php the_sub_field('image'); ?>'>
+            <h3><?php the_sub_field('titre'); ?></h3>
+            <p><?php the_sub_field('description'); ?></p>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+    </section>
+  <?php } ?>
 </main>
 
 <?php get_footer();

@@ -8,6 +8,45 @@ add_action ('init', 'history_taxonomy');
 
 function History_cpt() {
 
+  acf_add_local_field_group(array (
+		'id' => 'acf_histoire',
+		'title' => "Informations de la date historique",
+		'fields' => array (
+			array (
+				'key' => 'date-histoire',
+				'label' => 'Date',
+				'name' => 'date',
+				'type' => 'text',
+        'placeholder' => 'Indiquez la date de la date historique',
+        'required' => 1,
+			),
+			array (
+				'key' => 'titre-histoire',
+				'label' => 'Titre',
+				'name' => 'titre',
+				'type' => 'text',
+				'placeholder' => 'Indiquez le titre de la date historique',
+        'required' => 1,
+			),
+			array (
+				'key' => 'description-histoire',
+				'label' => 'Description',
+				'name' => 'description',
+				'type' => 'textarea',
+				'placeholder' => 'Indiquez une description de la date historique'
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'histoire',
+				),
+			),
+		),
+	));
+
 
 }
 

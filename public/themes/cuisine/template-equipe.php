@@ -18,8 +18,8 @@ get_header(); ?>
         <li>
           <article class='teammate'>
             <?php
-            if (defined(the_field("image_equipier"))){
-              ?> <div class="img-cover"><img src="<?php the_field("image_equipier"); ?>"></div>
+            if (get_field('image_equipier')){
+              ?> <div class="img-cover"><img src="<?php the_field('image_equipier') ?>"></div>
             <?php } else { ?>
               <div class='no-thumbnail'>
                 <i class="fas fa-user"></i>
@@ -47,6 +47,24 @@ get_header(); ?>
 
     <?php } ?>
   </section>
+  <?php wp_reset_postdata(); ?>
+
+  <?php if (get_field('activer_le_contenu_complementaire') && get_field('image_contenu_complementaire')){ ?>
+    <section class='more-content-container'>
+      <?php if (get_field('image_contenu_complementaire')): ?>
+        <div class='title-h3' style='background-image:url("<?php the_field("image_contenu_complementaire") ?>")'></div>
+      <?php endif; ?>
+      <ul>
+        <?php while(the_repeater_field('champs_complementaires')): ?>
+          <li>
+            <img src='<?php the_sub_field('image'); ?>'>
+            <h3><?php the_sub_field('titre'); ?></h3>
+            <p><?php the_sub_field('description'); ?></p>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+    </section>
+  <?php } ?>
 </main>
 
 <?php get_footer();

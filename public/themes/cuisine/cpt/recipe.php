@@ -32,6 +32,13 @@ function Recipe_cpt() {
         'type' => 'textarea',
         'placeholder' => 'Indiquez une description à la page',
       ),
+      array (
+				'key' => 'photo-header-menu',
+				'label' => 'Image du titre des menus',
+				'name' => 'image-menu',
+				'type' => 'image',
+				'save_format' => 'url',
+			),
     ),
     'location' => array (
       array (
@@ -66,6 +73,13 @@ function Recipe_cpt() {
         'append' => '€',
         'required' => 1,
       ),
+      array (
+				'key' => 'image-recette',
+				'label' => 'Image de la recette',
+				'name' => 'image-recette',
+				'type' => 'image',
+				'save_format' => 'url',
+			),
     ),
     'location' => array (
       array (

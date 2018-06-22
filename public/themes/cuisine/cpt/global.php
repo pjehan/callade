@@ -66,7 +66,7 @@ function Global_cpt() {
 
     acf_add_local_field_group(array (
   	'key' => 'infos-complementaires-histoire',
-  	'title' => 'Informations complémentaires',
+  	'title' => 'Informations complémentaires (vous devez activer l\'affichage pour que celui-ci s\'affiche sur la page)',
   	'fields' => array (
       array (
         'key' => 'image-contenu-supple',

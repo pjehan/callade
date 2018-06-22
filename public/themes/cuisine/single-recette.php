@@ -3,7 +3,7 @@
 
   <main id='cuisine-theme-menu'>
 
-    <section id='header-page' style='backgroud-image:URL DE IMAGE'>
+    <section id='header-page' style='background-image:url(<?php the_field("image-recette") ?>)'>
       <h1><?php the_title(); ?></h1>
     </section>
 
@@ -11,7 +11,7 @@
       <?php the_post_thumbnail('large'); ?>
       <p><?php echo get_the_term_list(get_the_ID(),'type-repas','Type de repas :',''); ?> </p>
       <p><?php echo get_the_term_list(get_the_ID(),'ingredient','Ingrédients :',',',''); ?> </p>
-      <?php the_field('prix'); ?>
+      <?php the_field('prix'); ?>€
       <?php the_content(); ?>
 
       <?php endwhile; else: ?>
