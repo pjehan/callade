@@ -4,7 +4,12 @@
   left: 0;
   width: 100%;
   transition: background .2s ease;
+  background: rgba($secondary-color, .1);
   z-index: 1;
+
+  .no-logo {
+    color: $white-color;
+  }
 
   h1 {
     font-size: 0;
@@ -91,10 +96,6 @@
 
     img {
       filter: drop-shadow(0 0px 0px #666);
-    }
-
-    .no-logo {
-      color: $white-color;
     }
 
     #burger div, div::before, div::after {

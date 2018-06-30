@@ -21,7 +21,9 @@ get_header(); ?>
 
   <section class='container'>
     <div class='preview-recipe'>
-      <img src='<?php the_field("image_principale_page") ?>'>
+      <?php if (get_field('image_principale_page')): ?>
+        <img src='<?php the_field("image_principale_page") ?>'>
+      <?php endif; ?>
       <div class='preview-list-recipe'>
         <?php $the_query = new WP_Query(array('post_type' => 'recette'));
         $counter = 0;

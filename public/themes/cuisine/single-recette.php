@@ -9,9 +9,12 @@
 
     <section class='container'>
       <?php the_post_thumbnail('large'); ?>
-      <p><?php echo get_the_term_list(get_the_ID(),'type-repas','Type de repas :',''); ?> </p>
-      <p><?php echo get_the_term_list(get_the_ID(),'ingredient','Ingrédients :',',',''); ?> </p>
-      <?php the_field('prix'); ?>€
+      <p><?php echo get_the_term_list(get_the_ID(),'type-repas','Type de repas :<br>',''); ?> </p>
+      <p><?php echo get_the_term_list(get_the_ID(),'ingredient','Liste des ingrédients : <br>',',',''); ?> </p>
+      <?php if (get_field('prix')): ?>
+        <?php the_field('prix'); ?>€
+      <?php endif; ?>
+
       <?php the_content(); ?>
 
       <?php endwhile; else: ?>
